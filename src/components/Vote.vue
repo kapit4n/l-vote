@@ -2,29 +2,33 @@
   <div>
     <h1>{{ question }}</h1>
     <h4> You can choose {{limit}} options</h4>
-    <ul>
-    <li>
-     <input type="checkbox"> 
-     <span>Javascript</span>
-    </li>
     
-    <li>
-     <input type="checkbox"> 
-     <span>Java</span>
-    </li>
-    
-    <li>
-      <input type="checkbox"> 
-      <span> Scala </span>
-    </li>
-    </ul>
-    <div> <button> NEXT </button></div>
+     <md-list>
+      <md-subheader>Notifications</md-subheader>
+
+      <md-list-item>
+        <md-checkbox v-model="voteLanguage" value="javascript" />
+        <span class="md-list-item-text">JavaScript</span>
+      </md-list-item>
+
+      <md-list-item>
+        <md-checkbox v-model="voteLanguage" value="java" />
+        <span class="md-list-item-text">Java</span>
+      </md-list-item>
+     </md-list>
+
+    <div>       <md-button class="md-primary">NEXT</md-button>
+</div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
+   data: () => ({
+      voteLanguage: ['javascript']
+    }),
   props: {
     question: String,
     limit: String
@@ -47,8 +51,5 @@ li span {
   color: darkmagenta;
 }
 
-li input {
-  float: left;
-}
 
 </style>
