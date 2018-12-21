@@ -1,5 +1,7 @@
 # l-vote
 
+![Home](https://raw.githubusercontent.com/kapit4n/l-vote/master/mockups/l-vote-home.png)
+
 ## Project setup
 ```
 npm install
