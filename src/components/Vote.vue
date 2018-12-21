@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>{{ question }}</h1>
+    <h4> You can choose {{limit}} options</h4>
     <ul>
     <li>
      <input type="checkbox"> 
@@ -17,6 +18,7 @@
       <span> Scala </span>
     </li>
     </ul>
+    <div> <button> NEXT </button></div>
   </div>
 </template>
 
@@ -24,7 +26,8 @@
 export default {
   name: 'HelloWorld',
   props: {
-    question: String
+    question: String,
+    limit: String
   }
 }
 </script>
