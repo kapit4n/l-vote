@@ -2,32 +2,26 @@
   <div>
     <h1>{{ question }}</h1>
     <h4> You can choose {{limit}} options</h4>
-    
      <md-list>
       <md-subheader>Notifications</md-subheader>
-
-      <md-list-item>
-        <md-checkbox v-model="voteLanguage" value="javascript" />
-        <span class="md-list-item-text">JavaScript</span>
-      </md-list-item>
-
-      <md-list-item>
-        <md-checkbox v-model="voteLanguage" value="java" />
-        <span class="md-list-item-text">Java</span>
+      <md-list-item  v-bind:key="language" v-for="language in optionsLanguages">
+        <md-checkbox v-model="voteLanguage" v-bind:value="language" />
+        <span class="md-list-item-text">{{language}}</span>
       </md-list-item>
      </md-list>
-
-    <div>       <md-button class="md-primary">NEXT</md-button>
-</div>
+    <div>
+        <md-button class="md-primary">NEXT</md-button>
+    </div>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'HelloWorld',
+  name: 'Vote',
    data: () => ({
-      voteLanguage: ['javascript']
+      voteLanguage: ['JavaScript'],
+      optionsLanguages: ['JavaScript', 'Java', 'Scala', 'Python']
     }),
   props: {
     question: String,
